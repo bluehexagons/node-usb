@@ -35,6 +35,10 @@
     "full-test": "mocha --compilers coffee:coffee-script",
     "valgrind": "coffee -c test/usb.coffee; valgrind --leak-check=full --show-possibly-lost=no node --expose-gc --trace-gc node_modules/mocha/bin/_mocha -R spec"
   },
+  "binary": {
+    "module_name": "usb_bindings",
+    "module_path": "./src/binding",
+  },
   "dependencies": {
     "nan": "^2.8.0",
     "node-pre-gyp": "^0.6.30"
