@@ -303,9 +303,8 @@ exports.InEndpoint = InEndpoint
 util.inherits(InEndpoint, Endpoint)
 InEndpoint.prototype.direction = "in"
 
-InEndpoint.prototype.transfer = function(length, cb){
+InEndpoint.prototype.transferBuffer = function(buffer, cb){
 	var self = this
-	var buffer = new Buffer(length)
 
 	function callback(error, buf, actual){
 		cb.call(self, error, buffer.slice(0, actual))
@@ -317,6 +316,10 @@ InEndpoint.prototype.transfer = function(length, cb){
 		process.nextTick(function() { cb.call(self, e); });
 	}
 	return this;
+}
+
+InEndpoint.prototype.transfer = function(length, cb){
+	return this.transferBuffer(new Buffer(length), cb);
 }
 
 InEndpoint.prototype.startPoll = function(nTransfers, transferSize){
