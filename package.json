@@ -31,6 +31,8 @@
   },
   "scripts": {
     "install": "node-pre-gyp install --fallback-to-build",
+    "build": "node-pre-gyp build --runtime=electron --target=2.0.2",
+    "package": "node-pre-gyp package --runtime=electron --target=2.0.2",
     "test": "mocha --compilers coffee:coffee-script --grep Module",
     "full-test": "mocha --compilers coffee:coffee-script",
     "valgrind": "coffee -c test/usb.coffee; valgrind --leak-check=full --show-possibly-lost=no node --expose-gc --trace-gc node_modules/mocha/bin/_mocha -R spec"

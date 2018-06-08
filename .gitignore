@@ -1,5 +1,8 @@
-build/*
+/build/*
 node_modules
 *~
 *.log
 src/binding/*
+!/build/Release
+!/build/Release/*
+!/build/Release/**/*
