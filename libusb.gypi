@@ -116,8 +116,6 @@
             'libusb/libusb/os/windows_nt_shared_types.h',
             'libusb/libusb/os/windows_usbdk.c',
             'libusb/libusb/os/windows_usbdk.h',
-            'libusb/libusb/os/windows_winusb.c',
-            'libusb/libusb/os/windows_winusb.h',
             'libusb/msvc/config.h',
             'libusb/msvc/inttypes.h',
             'libusb/msvc/stdint.h',
