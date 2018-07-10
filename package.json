@@ -31,7 +31,7 @@
   },
   "scripts": {
     "configure": "node-pre-gyp configure",
-    "install": "node-pre-gyp install --fallback-to-build",
+    "install": "node-pre-gyp install --fallback-to-build /m",
     "build": "node-pre-gyp build --runtime=electron --target=2.0.2",
     "package": "node-pre-gyp package --runtime=electron --target=2.0.2",
     "test": "mocha --compilers coffee:coffee-script --grep Module",
