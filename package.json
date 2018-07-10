@@ -30,6 +30,7 @@
     "url": "https://github.com/bluehexagons/node-usb.git"
   },
   "scripts": {
+    "configure": "node-pre-gyp configure",
     "install": "node-pre-gyp install --fallback-to-build",
     "build": "node-pre-gyp build --runtime=electron --target=2.0.2",
     "package": "node-pre-gyp package --runtime=electron --target=2.0.2",

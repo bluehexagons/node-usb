@@ -84,7 +84,8 @@
                 'AdditionalOptions': [ '/EHsc' ],
               },
             },
-          }]
+          }
+        ]
       ]
     },
   ]
