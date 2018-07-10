@@ -116,10 +116,7 @@
             'libusb/libusb/os/windows_usbdk.c',
             'libusb/libusb/os/windows_usbdk.h',
             'libusb/libusb/os/windows_winusb.c',
-            'libusb/libusb/os/windows_winusb.h',
-            'libusb/msvc/config.h',
-            'libusb/msvc/inttypes.h',
-            'libusb/msvc/stdint.h',
+            'libusb/libusb/os/windows_winusb.h'
           ],
           'include_dirs!': [
             'libusb_config',
