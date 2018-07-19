@@ -1,7 +1,13 @@
-USB Library for Node.JS
+bluehexagons node-usb fork
 ===============================
 
-**POSIX:** [![Build Status](https://travis-ci.org/nonolith/node-usb.svg?branch=tcr-usb)](https://travis-ci.org/nonolith/node-usb) &nbsp;&nbsp;&nbsp; **Windows:** [![Build status](https://ci.appveyor.com/api/projects/status/b23kn1pi386nguya/branch/master)](https://ci.appveyor.com/project/kevinmehall/node-usb/branch/master)
+This is a fork of Tessel's [node-usb](https://github.com/tessel/node-usb). It updates libusb to v1.0.22 from v1.0.19 (2014) and updates various dependencies. Also added is the `InEndpoint.prototype.transferBuffer` function to avoid creating a new buffer object on every transfer.
+
+Original Readme.md below
+===============================
+
+USB Library for Node.JS
+===============================
 
 Node.JS library for communicating with USB devices in JavaScript / CoffeeScript.
 
