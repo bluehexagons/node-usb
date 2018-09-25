@@ -6,9 +6,14 @@ var usb = exports = module.exports = require(binding_path);
 var events = require('events')
 var util = require('util')
 
-// Check that libusb was initialized.
 if (usb.INIT_ERROR) {
-	throw new Error('Could not initialize libusb. Check that your system has a usb controller.');
+	console.warn("Failed to initialize libusb.")
+	usb.Device = function () { throw new Error("Device cannot be instantiated directly.") };
+	usb.Transfer = function () { throw new Error("Transfer cannot be instantiated directly.") };
+	usb.setDebugLevel = function () { };
+	usb.getDeviceList = function () { return []; };
+	usb._enableHotplugEvents = function () { };
+	usb._disableHotplugEvents = function () { };
 }
 
 Object.keys(events.EventEmitter.prototype).forEach(function (key) {
@@ -400,10 +405,14 @@ OutEndpoint.prototype.transferWithZLP = function (buf, cb) {
 var hotplugListeners = 0;
 exports.on('newListener', function(name) {
 	if (name !== 'attach' && name !== 'detach') return;
-	if (++hotplugListeners === 1) usb._enableHotplugEvents();
+	if (++hotplugListeners === 1) {
+		usb._enableHotplugEvents();
+	}
 });
 
 exports.on('removeListener', function(name) {
 	if (name !== 'attach' && name !== 'detach') return;
-	if (--hotplugListeners === 0) usb._disableHotplugEvents();
+	if (--hotplugListeners === 0) {
+		usb._disableHotplugEvents();
+	}
 });
