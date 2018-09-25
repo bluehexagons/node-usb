@@ -49,7 +49,7 @@
     "node-pre-gyp": "^0.11.0"
   },
   "devDependencies": {
-    "coffeescript": "^2.3.0",
+    "coffeescript": "^2.3.2",
     "mocha": "^5.0.0"
   },
   "license": "MIT"
