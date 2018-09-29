@@ -219,12 +219,15 @@ InEndpoint
 
 Endpoints in the IN direction (device->PC) have this type.
 
-### .transfer(length, callback(error, data))
+### .transferBuffer(buffer, callback(error, data))
 Perform a transfer to read data from the endpoint.
 
-If length is greater than maxPacketSize, libusb will automatically split the transfer in multiple packets, and you will receive one callback with all data once all packets are complete.
+If `buffer` length is greater than `maxPacketSize`, libusb will automatically split the transfer in multiple packets, and you will receive one callback with all data once all packets are complete.
 
 `this` in the callback is the InEndpoint object.
+
+### .transfer(length, callback(error, data))
+Calls `.transferBuffer` using a new `Buffer` of the specified `length`.
 
 ### .startPoll(nTransfers=3, transferSize=maxPacketSize)
 Start polling the endpoint.
